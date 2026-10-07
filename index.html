@@ -109,15 +109,33 @@
 </div>
 
 <script>
-function copiarPix(){
-    navigator.clipboard.writeText("64.528.932/0001-94");
-
-    document.getElementById("mensagem").style.display="block";
-
-    setTimeout(()=>{
-        document.getElementById("mensagem").style.display="none";
-    },3000);
+2
+window.onload = function() {
+3
+navigator.clipboard.writeText("64.528.932/0001-94")
+4
+.then(() => {
+5
+document.getElementById("mensagem").innerHTML =
+6
+"✅ Chave PIX copiada automaticamente!";
+7
+document.getElementById("mensagem").style.display = "block";
+8
+})
+9
+.catch(() => {
+10
+document.getElementById("mensagem").innerHTML =
+11
+"Clique no botão para copiar a chave PIX.";
+12
+document.getElementById("mensagem").style.display = "block";
+13
+});
+14
 }
+15
 </script>
 
 </body>
